@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#010619"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lets  you  in"
+        android:textSize="50sp"
+        android:fontFamily="@font/acme"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp"
+            android:background="@drawable/custom_edittext">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/login_email"
+                android:background="@drawable/edittext_login_signin"
+                android:layout_marginTop="40dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:hint="Email"
+                android:textColorHint="@color/white"
+                android:drawableLeft="@drawable/login_email_icon"
+                android:drawablePadding="8dp"
+                android:textColor="@color/white"
+                android:autofillHints=""
+                android:inputType="text"
+                tools:ignore="HardcodedText,RtlHardcoded,TextFields,VisualLintTextFieldSize" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/login_password"
+                android:background="@drawable/edittext_login_signin"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Password"
+                android:textColorHint="@color/white"
+                android:drawableLeft="@drawable/login_password_icon"
+                android:drawablePadding="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:ignore="HardcodedText,RtlHardcoded,TextFields,VisualLintTextFieldSize"
+                android:autofillHints="" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Log In"
+                android:id="@+id/login_button"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#7738D1"
+                app:cornerRadius = "20dp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-25dp"
+        android:fontFamily="@font/acme"
+        android:text="Or"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText" />
+
+
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/acme"
+        android:text="Forgot Password"
+        android:textAlignment="center"
+        android:textColor="#9C74D6"
+        android:textSize="18sp"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="45dp"
+        android:theme="@style/Theme.Material3.Dark.Dialog"
+        android:textAlignment="center"
+        />
+
+        <!--    Java code Likho!-->
+        <TextView
+            android:id="@+id/signUpRedirectText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/acme"
+            android:text="Don't have an account? Sign up"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+</LinearLayout>

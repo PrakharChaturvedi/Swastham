@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/home_navBar"
+        android:enabled="true"
+        android:icon="@mipmap/ic_navbar_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/goal_navBar"
+        android:enabled="true"
+        android:icon="@mipmap/ic_navbar_goal"
+        android:title="Goal" />
+
+    <item
+        android:id="@+id/insight_navBar"
+        android:enabled="true"
+        android:icon="@mipmap/ic_navbar_insight"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/user_navBar"
+        android:enabled="true"
+        android:icon="@mipmap/ic_navbar_user"
+        android:title="Home" />
+
+</menu>

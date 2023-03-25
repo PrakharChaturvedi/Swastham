@@ -7,13 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#010619"
-    android:padding="15dp"
     android:orientation="vertical"
     >
 
-<!--    Top Bar: App Icon,App Title,Notification Icon
-        Creating and Name with wave emoji
--->   <LinearLayout
+    <!--    Top Bar: App Icon,App Title,Notification Icon
+            Creating and Name with wave emoji
+    -->   <LinearLayout
     android:id="@+id/LinearLayout_top"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -37,55 +36,56 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fontFamily="@font/acme"
-        android:padding="10dp"
+        android:padding="0dp"
         android:text="@string/swastham"
         android:textColor="@color/white"
-        android:textSize="25sp" />
-
-<!--    <ImageView-->
-<!--        android:id="@+id/notification_id"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginStart="70dp"-->
-<!--        android:src="@mipmap/icons_bell_notification"-->
-<!--        tools:ignore="ContentDescription" />-->
-
-</LinearLayout>
-
-
-
-
-
-    <!-- Bottom Nav menu items: Home,Insight:(calendar,Nutrition),Goal Tracking,Profile
-     Home Screen Items: Shopping APP , Workout suggestion and schedule -->
+        android:textSize="35sp" />
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="102dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="-6dp"
+        android:backgroundTint="@color/black"
         android:fontFamily="@font/acme"
-        android:layout_marginTop="500dp"
-        android:padding="12dp"
-        android:text="Log Out"
-        android:textSize="20sp"
+        android:text="Logout"
+        android:textColor="#5BD5D5"
+        android:textSize="19sp"
         app:cornerRadius="15dp"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck,VisualLintBounds" />
+</LinearLayout>
+
+    <!--Code of FrameLayout,item that is to be replaced-->
+    <!-- Bottom Nav menu items: Home,Insight:(calendar,Nutrition),Goal Tracking,Profile
+     Home Screen Items: Shopping APP , Workout suggestion and schedule -->
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout_top"
+        app:layout_constraintVertical_bias="0.04" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_gravity="bottom"
+        app:circularflow_radiusInDP="15dp"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/menu_navbar"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/white"
+        app:menu="@menu/menu_navbar"
+        android:background="@drawable/transparent_rect"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

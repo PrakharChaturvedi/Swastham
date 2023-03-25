@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#010619"
+    tools:context=".activity_account_setup_profile">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingVertical="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:paddingHorizontal="50dp"
+            android:text="Fill your Profile"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="37sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/acme"
+            android:padding="15dp"
+            android:text="@string/setup5"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:cardCornerRadius="65dp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout4"
+            android:layout_marginHorizontal="140dp"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/full_name_profile_setup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_login_signin"
+            android:drawablePadding="8dp"
+            android:hint="Full Name"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,TextFields,VisualLintTextFieldSize" />
+
+        <EditText
+            android:id="@+id/Nick_name_profile_setup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_login_signin"
+            android:drawablePadding="8dp"
+            android:hint="Nick name"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,TextFields,VisualLintTextFieldSize" />
+
+        <EditText
+            android:id="@+id/Email_profile_setup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_login_signin"
+            android:drawablePadding="8dp"
+            android:hint="Email"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,TextFields,VisualLintTextFieldSize" />
+
+        <EditText
+            android:id="@+id/PhoneNumber_profile_setup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_login_signin"
+            android:drawablePadding="8dp"
+            android:hint="Phone number"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,TextFields,VisualLintTextFieldSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/Back_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#7E7D7D"
+            android:text="Skip"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,VisualLintButtonSize,TextContrastCheck"
+            tools:layout_editor_absoluteX="25dp" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#7738D1"
+            android:text="Continue"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,VisualLintButtonSize"
+            tools:layout_editor_absoluteX="25dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

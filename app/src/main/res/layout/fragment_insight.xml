@@ -25,7 +25,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintTop_toBottomOf="@+id/calendarView">
 
         <TextView
@@ -55,15 +54,15 @@
             app:layout_constraintVertical_bias="0.917"
             tools:layout_editor_absoluteX="16dp" />
     </LinearLayout>
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp"></ScrollView>
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/calendarView"-->
+<!--        app:layout_constraintVertical_bias="1.0"-->
+<!--        tools:layout_editor_absoluteX="0dp"></ScrollView>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

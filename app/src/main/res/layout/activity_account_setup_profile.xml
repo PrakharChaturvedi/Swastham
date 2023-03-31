@@ -7,6 +7,7 @@
     android:background="#010619"
     tools:context=".activity_account_setup_profile">
 
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -62,10 +63,21 @@
             tools:ignore="MissingConstraints"
             >
             <ImageView
+                android:id="@+id/Profile_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@mipmap/person_profile"
                 />
+
+            <ImageButton
+                android:id="@+id/edit_profile_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/edit_icon_profile"
+                android:layout_marginTop="75dp"
+                android:layout_marginLeft="75dp"
+                />
+
         </androidx.cardview.widget.CardView>
 
         <EditText
@@ -153,7 +165,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/Back_button"
+            android:id="@+id/Skip_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="25dp"
@@ -167,7 +179,7 @@
             tools:layout_editor_absoluteX="25dp" />
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/Continue_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="50dp"

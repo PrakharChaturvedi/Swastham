@@ -1,27 +1,18 @@
 package com.example.mamain_project;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
 import com.example.mamain_project.databinding.ActivityMainBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -48,12 +39,9 @@ public class MainActivity extends AppCompatActivity
             String gName = gAccount.getDisplayName();
 //            userName.setText(gName);
         }
-        logout.setOnClickListener(view -> gClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                finish();
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            }
+        logout.setOnClickListener(view -> gClient.signOut().addOnCompleteListener(task -> {
+            finish();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }));
 
         binding =ActivityMainBinding.inflate(getLayoutInflater());

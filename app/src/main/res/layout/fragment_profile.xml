@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment"
     android:paddingTop="15dp"
-    android:background="@color/black">
+    android:background="#010619">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -26,18 +26,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/acme"
+            android:fontFamily="@font/amiko"
             android:text="User Name"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/user_email_ProfileFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/acme"
+            android:fontFamily="@font/amiko"
             android:text="User123@gmail.com"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -48,8 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:background="#857E7E" />
+            android:layout_marginTop="30dp"
+            android:background="#D5D5D5" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,21 +70,20 @@
         android:layout_marginLeft="25dp">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/ic_navbar_user"
-            android:layout_gravity="bottom"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/user_icon_profile"
+            android:layout_gravity="center"
             />
 
         <Button
             android:id="@+id/Edit_profile_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-black"
-            android:textAlignment="viewStart"
-            android:text="Edit Profile"
             android:backgroundTint="@color/black"
+            android:fontFamily="@font/amiko"
+            android:text="Edit Profile"
+            android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="22sp" />
     </LinearLayout>
@@ -96,19 +95,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="25dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:src="@mipmap/icons_profile_notifications"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            />-->
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/notification_icon_profile"
+            android:layout_gravity="center"
+            />
 
         <Button
             android:id="@+id/Notification_profile_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/amiko"
             android:text="Notifications"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
@@ -123,18 +122,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="25dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:src="@mipmap/icons_profile_security"-->
-<!--            android:layout_gravity="bottom"-->
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/security_icon_profile"
+            android:layout_gravity="center"
             />
+
         <Button
             android:id="@+id/Security_profile_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/amiko"
             android:text="Security"
             android:textAlignment="viewStart"
             android:backgroundTint="@color/black"
@@ -149,18 +149,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="25dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:src="@mipmap/icons_profile_info"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            />-->
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/help_icon_profile"
+            android:layout_gravity="center"
+            />
+
         <Button
             android:id="@+id/Help_profile_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/amiko"
             android:text="Help"
             android:textColor="@color/white"
             android:backgroundTint="@color/black"
@@ -176,18 +177,19 @@
         android:layout_marginLeft="25dp"
         android:layout_marginVertical="10dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:src="@mipmap/ic_profile_mode"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            />-->
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/mode_icon_profile"
+            android:layout_gravity="center"
+            />
+
         <TextView
             android:id="@+id/mode_profile_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/amiko"
             android:text="@string/mode"
             android:layout_marginLeft="25dp"
             android:textAlignment="viewStart"
@@ -203,19 +205,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="25dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:src="@mipmap/icons_profile_logout"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            />-->
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@mipmap/logout_icon_profile"
+            android:layout_gravity="center"
+            />
         <Button
             android:id="@+id/logOut_profile_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/amiko"
             android:text="Logout"
             android:textAlignment="viewStart"
             android:textColor="#DC493E"

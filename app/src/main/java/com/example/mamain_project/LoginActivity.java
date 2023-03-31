@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -59,107 +60,106 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 //        if(currentUser != null){
 //            reload();
 //        }
-        loginButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                String email = loginEmail.getText().toString();
-                String pass = loginPassword.getText().toString();
-                if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        SharedPreferences preferences = getSharedPreferences("PREFERENCE",MODE_PRIVATE);
+        String FirstTime = preferences.getString("FirstInstall","");
+
+        loginButton.setOnClickListener(v -> {
+            String email = loginEmail.getText().toString();
+            String pass = loginPassword.getText().toString();
+            if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches())
+            {
+                if (!pass.isEmpty())
                 {
-                    if (!pass.isEmpty())
-                    {
-                        auth.signInWithEmailAndPassword(email, pass).addOnSuccessListener(new OnSuccessListener<AuthResult>()
+                    auth.signInWithEmailAndPassword(email, pass).addOnSuccessListener(new OnSuccessListener<AuthResult>()
+                            {
+                                @Override
+                                public void onSuccess(AuthResult authResult)
                                 {
-                                    @Override
-                                    public void onSuccess(AuthResult authResult)
+
+                                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    if(FirstTime.equals("Yes"))
                                     {
-                                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                        //finish();
+                                        Intent intent = new Intent(LoginActivity.this, Account_setup_gender.class);
                                     }
-                                }).addOnFailureListener(new OnFailureListener()
+                                    else
+                                    {
+                                        SharedPreferences.Editor editor = preferences.edit();
+                                        editor.putString("FirstInstall","Yes");
+                                        editor.apply();
+                                    }
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    //finish();-
+                                }
+                            }).addOnFailureListener(new OnFailureListener()
+                            {
+                                @Override
+                                public void onFailure(@NonNull Exception e)
                                 {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e)
-                                    {
-                                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                    }
-                    else
-                    {
-                        loginPassword.setError("Empty fields are not allowed");
-                    }
-                }
-                else if (email.isEmpty())
-                {
-                    loginEmail.setError("Empty fields are not allowed");
+                                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                 }
                 else
                 {
-                    loginEmail.setError("Please enter correct email");
+                    loginPassword.setError("Empty fields are not allowed");
                 }
+            }
+            else if (email.isEmpty())
+            {
+                loginEmail.setError("Empty fields are not allowed");
+            }
+            else
+            {
+                loginEmail.setError("Please enter correct email");
             }
         });
 
-        signupRedirectText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
-            }
-        });
+        signupRedirectText.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignUpActivity.class)));
 
         //BackEnd Code of Forgot password on Login page
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        forgotPassword.setOnClickListener(v -> {
 
-                AlertDialog.Builder builder =  new AlertDialog.Builder(LoginActivity.this);
-                View dialogView = getLayoutInflater().inflate(R.layout.dialog_forgot,null);
-                EditText emailBox = dialogView.findViewById(R.id.emailBox);
-                builder.setView(dialogView);
-                AlertDialog dialog = builder.create();
-                dialogView.findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String userEmail = emailBox.getText().toString();
-                        if (TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
-                            Toast.makeText(LoginActivity.this, "Enter your registered email id", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        auth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
-                                    Toast.makeText(LoginActivity.this, "Check your email", Toast.LENGTH_SHORT).show();
-                                    dialog.dismiss();
-                                } else {
-                                    Toast.makeText(LoginActivity.this, "Unable to send, failed", Toast.LENGTH_SHORT).show();
-                                }
+            AlertDialog.Builder builder =  new AlertDialog.Builder(LoginActivity.this);
+            View dialogView = getLayoutInflater().inflate(R.layout.dialog_forgot,null);
+            EditText emailBox = dialogView.findViewById(R.id.emailBox);
+            builder.setView(dialogView);
+            AlertDialog dialog = builder.create();
+            dialogView.findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String userEmail = emailBox.getText().toString();
+                    if (TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+                        Toast.makeText(LoginActivity.this, "Enter your registered email id", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    auth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(LoginActivity.this, "Check your email", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Unable to send, failed", Toast.LENGTH_SHORT).show();
                             }
-                        });
-                    }
-                });
-                dialogView.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-                if (dialog.getWindow() != null){
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                        }
+                    });
                 }
-                dialog.show();
+            });
+            dialogView.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+            if (dialog.getWindow() != null){
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
             }
+            dialog.show();
         });
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-                startActivityForResult(intent,SIGN_IN);
-            }
+        signInButton.setOnClickListener(v -> {
+            Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+            startActivityForResult(intent,SIGN_IN);
         });
 
     }

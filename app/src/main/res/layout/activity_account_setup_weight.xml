@@ -73,7 +73,7 @@
             android:layout_marginBottom="30dp"/>
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/Continue_button"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginRight="25dp"

@@ -33,37 +33,29 @@ public class SignUpActivity extends AppCompatActivity {
         Button signupButton = findViewById(R.id.signup_button);
         TextView loginRedirectText = findViewById(R.id.loginRedirectText);
 
-        signupButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String user = signupEmail.getText().toString().trim();
-                String pass = signupPassword.getText().toString().trim();
-                if (user.isEmpty()){
-                    signupEmail.setError("Email cannot be empty");
-                }
-                if (pass.isEmpty()){
-                    signupPassword.setError("Password cannot be empty");
-                } else{
-                    auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(SignUpActivity.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-                            } else {
-                                Toast.makeText(SignUpActivity.this, "SignUp Failed" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
-                            }
+        signupButton.setOnClickListener(view -> {
+            String user = signupEmail.getText().toString().trim();
+            String pass = signupPassword.getText().toString().trim();
+            if (user.isEmpty()){
+                signupEmail.setError("Email cannot be empty");
+            }
+            if (pass.isEmpty()){
+                signupPassword.setError("Password cannot be empty");
+            } else{
+                auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUpActivity.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "SignUp Failed" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                    });
-                }
+                    }
+                });
             }
         });
-        loginRedirectText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-            }
-        });
+        loginRedirectText.setOnClickListener(view -> startActivity(new Intent(SignUpActivity.this, LoginActivity.class)));
 
     }
 }

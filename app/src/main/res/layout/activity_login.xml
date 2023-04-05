@@ -66,6 +66,7 @@
                 android:drawablePadding="8dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"
+                android:textColorLink="@color/white"
                 tools:ignore="HardcodedText,RtlHardcoded,TextFields,VisualLintTextFieldSize"
                 android:autofillHints="" />
             <Button

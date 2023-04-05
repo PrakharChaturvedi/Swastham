@@ -31,7 +31,6 @@ public class activity_account_setup_age extends AppCompatActivity {
                 String text = "Changed from " + oldVal + " to " + newVal;
                 Toast.makeText(activity_account_setup_age.this,text, Toast.LENGTH_SHORT).show();
             });
-
         }
 
         Continue_button.setOnClickListener(v -> {

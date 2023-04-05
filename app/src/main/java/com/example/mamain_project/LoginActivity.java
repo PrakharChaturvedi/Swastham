@@ -75,11 +75,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                                 @Override
                                 public void onSuccess(AuthResult authResult)
                                 {
-
                                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     if(FirstTime.equals("Yes"))
                                     {
                                         Intent intent = new Intent(LoginActivity.this, Account_setup_gender.class);
+                                        startActivity(intent);
                                     }
                                     else
                                     {

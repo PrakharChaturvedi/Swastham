@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment"
     android:paddingTop="15dp"
-    android:background="#010619">
+    android:background="#010619"
+    android:id="@+id/fragment_profile">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -67,14 +69,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="25dp">
+        android:layout_marginHorizontal="25dp">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@mipmap/user_icon_profile"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:src="@mipmap/user_icon_profile"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
 
         <Button
             android:id="@+id/Edit_profile_fragment"
@@ -86,6 +88,7 @@
             android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:textSize="22sp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -93,14 +96,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="25dp">
+        android:layout_marginHorizontal="25dp">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@mipmap/notification_icon_profile"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:src="@mipmap/notification_icon_profile"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
 
         <Button
             android:id="@+id/Notification_profile_fragment"
@@ -120,14 +123,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="25dp">
+        android:layout_marginHorizontal="25dp">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@mipmap/security_icon_profile"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:src="@mipmap/security_icon_profile"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
 
         <Button
             android:id="@+id/Security_profile_fragment"
@@ -147,14 +150,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="25dp">
+        android:layout_marginHorizontal="25dp">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@mipmap/help_icon_profile"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:src="@mipmap/help_icon_profile"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
 
         <Button
             android:id="@+id/Help_profile_fragment"
@@ -174,15 +177,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="25dp"
+        android:layout_marginHorizontal="25dp"
         android:layout_marginVertical="10dp">
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@mipmap/mode_icon_profile"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:src="@mipmap/mode_icon_profile"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
 
         <TextView
             android:id="@+id/mode_profile_fragment"
@@ -191,7 +194,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/amiko"
             android:text="@string/mode"
-            android:layout_marginLeft="25dp"
+            android:layout_marginHorizontal="25dp"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
             android:backgroundTint="@color/black"
@@ -203,14 +206,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="25dp">
+        android:layout_marginHorizontal="25dp">
 
-        <ImageView
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:src="@mipmap/logout_icon_profile"
-            android:layout_gravity="center"
-            />
+<!--        <ImageView-->
+<!--            android:layout_width="38dp"-->
+<!--            android:layout_height="38dp"-->
+<!--            android:src="@mipmap/logout_icon_profile"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
         <Button
             android:id="@+id/logOut_profile_fragment"
             android:layout_width="match_parent"

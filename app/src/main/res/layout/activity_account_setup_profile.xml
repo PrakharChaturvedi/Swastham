@@ -67,16 +67,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@mipmap/person_profile"
-                />
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/edit_profile_button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:src="@mipmap/edit_icon_profile"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="75dp"
                 android:layout_marginTop="75dp"
-                android:layout_marginLeft="75dp"
-                />
+                android:src="@mipmap/edit_icon_profile"
+                tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         </androidx.cardview.widget.CardView>
 
